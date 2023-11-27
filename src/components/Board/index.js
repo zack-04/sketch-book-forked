@@ -28,8 +28,8 @@ const Board = () => {
          anchor.click();
       } else if(actionMenuItem === MENU_ITEMS.UNDO || actionMenuItem === MENU_ITEMS.REDO) {
          console.log("undo/redo");
-         if(historyPointer.current > 1 && actionMenuItem === MENU_ITEMS.UNDO) historyPointer.current -= 2;
-         if(historyPointer.current < drawHistory.current.length - 2 && actionMenuItem === MENU_ITEMS.REDO) historyPointer.current += 2;
+         if(historyPointer.current > 0 && actionMenuItem === MENU_ITEMS.UNDO) historyPointer.current -= 1;
+         if(historyPointer.current < drawHistory.current.length - 1 && actionMenuItem === MENU_ITEMS.REDO) historyPointer.current += 1;
          const imgData = drawHistory.current[historyPointer.current];
          context.putImageData(imgData, 0, 0);
          console.log(historyPointer.current);
